@@ -230,43 +230,6 @@ python src/relu_temperature_neuron.py
 jupyter notebook notebooks/ReLU_Temperature_Analysis.ipynb
 ```
 
-## Viva Questions
-
-### 1. What is ReLU?
-ReLU stands for Rectified Linear Unit. It is an activation function defined as `ReLU(z) = max(0, z)`. It outputs zero for negative inputs and passes positive inputs unchanged.
-
-### 2. Why is ReLU used?
-ReLU is used because it is computationally simple, introduces non-linearity, creates sparse activations, and avoids the vanishing gradient problem that affects sigmoid and tanh functions.
-
-### 3. What is pre-activation?
-Pre-activation is the raw output of a neuron before applying the activation function. It is calculated as `z = w * x + b`, where `w` is the weight, `x` is the input, and `b` is the bias.
-
-### 4. What is the formula for a neuron?
-The formula for a single neuron is `z = w * x + b`, followed by an activation function. In our case: `output = ReLU(w * x + b) = max(0, w * x + b)`.
-
-### 5. What happens when pre-activation is negative?
-When pre-activation is negative, ReLU outputs zero. The neuron does not fire and produces no activation. This is equivalent to the neuron being "off."
-
-### 6. What happens when pre-activation is positive?
-When pre-activation is positive, ReLU passes the value through unchanged. The neuron fires and its output equals the pre-activation value.
-
-### 7. Why does ReLU produce zero for negative values?
-Because the definition is `max(0, z)`. When `z` is negative, `0` is greater than `z`, so the maximum is `0`. This design choice filters out negative signals, creating sparsity in the network.
-
-### 8. What is the role of the weight?
-The weight (`w`) determines how much the input influences the neuron's output. It scales the input value. A weight of `0.5` means the temperature is halved before further processing.
-
-### 9. What is the role of the bias?
-The bias (`b`) shifts the pre-activation value up or down. A bias of `-8` means the neuron needs a sufficiently large weighted input to overcome this negative shift and produce a positive pre-activation.
-
-### 10. Why did we use a simple neuron instead of a large neural network?
-Because the objective is to understand how ReLU works at the fundamental level. A single neuron isolates the ReLU concept without the complexity of multiple layers, backpropagation, or training.
-
-### 11. What is sparsity in ReLU?
-Sparsity means that many neurons output zero for a given input. In our example, 5 out of 8 temperatures produced zero output. Sparse representations are efficient and help the network focus on relevant features.
-
-### 12. How does ReLU introduce non-linearity?
-A purely linear function would map all inputs proportionally. ReLU breaks this by outputting zero for all negative values and passing positive values as-is. This creates a "kink" at zero, making the overall function non-linear, which is essential for learning complex patterns.
 
 ## References
 
